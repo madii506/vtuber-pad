@@ -1,6 +1,6 @@
 {
   "cleanUrls": true,
-  "rewrites": [{ "source": "/v/:mint", "destination": "/v.html" }],
+  "rewrites": [{ "source": "/v/:mint", "destination": "/v" }],
   "functions": { "api/*.js": { "maxDuration": 30 } },
   "headers": [
     { "source": "/vendor/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] },
