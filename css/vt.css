@@ -365,3 +365,4 @@ body.obs .sub{left:4%;transform:none;bottom:6%;width:min(60%,900px);font-size:30
   .st .stk{width:64px;top:18px}
 }
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+@media (max-height:780px) and (min-width:981px){.crowd{display:none}.hero-copy{padding-bottom:110px}}
