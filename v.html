@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VTUBER</title>
+<meta name="description" content="A VTuber streaming live on VTUBER: it talks and reacts to every trade on its pump.fun coin.">
+<meta property="og:title" content="VTUBER">
+<meta property="og:image" content="https://vtuber-pad.vercel.app/assets/og.png">
+<meta name="twitter:image" content="https://vtuber-pad.vercel.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a0b2e">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/fav-32.png">
+<link rel="apple-touch-icon" href="/assets/fav-180.png">
+<link rel="preload" href="/assets/mochiy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/vt.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="bg" aria-hidden="true"></canvas>
+<nav class="nav" aria-label="Main"><span></span><div class="links"><a href="/#live">Live</a><a href="/#how">How it works</a><a href="/#obs">Stream it</a><a href="/#faq">FAQ</a><a class="go" href="/launch">Launch</a></div><span></span></nav>
+<main id="main" class="room">
+  <div id="roomBox" hidden>
+    <div class="win">
+      <div class="studio">
+        <div class="stage" id="rStage"><span class="live off corner" id="rLive"><i></i><span>CONNECTING</span></span></div>
+        <aside class="chat" aria-label="Live trades"><h4>CHAT · LIVE TRADES</h4><div class="msgs" id="rMsgs"></div></aside>
+      </div>
+    </div>
+    <div class="info">
+      <div class="who"><img id="rIcon" alt=""><div><b id="rName"></b><span id="rSym"></span></div></div>
+      <div class="stat"><small>MARKET CAP</small><b id="rMcap">—</b></div>
+      <div class="stat"><small id="rCurveL">BONDING</small><div class="meter"><i id="rCurve" style="width:0"></i></div></div>
+      <div class="acts">
+        <a class="btn pink sm" id="rBuy" target="_blank" rel="noopener">Buy on pump.fun</a>
+        <a class="btn sm" id="rChart" target="_blank" rel="noopener">Chart</a>
+        <button class="btn sm" id="rCard" type="button">Save moment</button>
+        <button class="btn sm" id="rCopy" type="button">Copy CA</button>
+        <button class="btn cyan sm" id="rObs" type="button">Copy overlay link</button>
+        <button class="btn lemon sm" id="rSound" type="button" aria-pressed="false">Sound off</button>
+      </div>
+    </div>
+    <div class="bio"><p id="rBio"></p><div class="traits" id="rTraits"></div></div>
+  </div>
+  <div class="miss" id="miss" hidden><h1 id="missT">Loading the stream…</h1><p id="missP"></p><p><a class="btn pink" href="/launch">Launch a VTuber</a></p></div>
+</main>
+<script type="module" src="/js/room.js"></script>
+</body>
+</html>

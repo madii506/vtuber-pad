@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VTUBER</title>
+<meta name="description" content="Every coin becomes a VTuber. Upload a character, give it a personality and launch its coin on pump.fun. It goes live the same minute.">
+<meta property="og:title" content="VTUBER">
+<meta property="og:description" content="Every coin becomes a VTuber. Launch on pump.fun, go live the same minute.">
+<meta property="og:image" content="https://vtuber-pad.vercel.app/assets/og.png">
+<meta name="twitter:image" content="https://vtuber-pad.vercel.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a0b2e">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/fav-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/fav-64.png">
+<link rel="apple-touch-icon" href="/assets/fav-180.png">
+<link rel="preload" href="/assets/mochiy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/zenmaru-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/vt.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="bg" aria-hidden="true"></canvas>
+<nav class="nav" aria-label="Main"><span></span><div class="links"><a href="#live">Live</a><a href="#how">How it works</a><a href="#obs">Stream it</a><a href="#faq">FAQ</a><a class="go" href="/launch">Launch</a></div><span></span></nav>
+<main id="main">
+  <section class="live-hero" id="top">
+    <div class="stage hero-stage" id="heroStage"><div class="crowd" id="crowd" aria-hidden="true"><img src="/assets/cast/bunbun.png" alt=""><img src="/assets/cast/kitsu.png" alt=""><img src="/assets/cast/drako.png" alt=""><img src="/assets/cast/hoshi.png" alt=""><img src="/assets/cast/kuma.png" alt=""></div></div>
+    <div class="hero-copy">
+      <span class="kick"><span class="live off" id="feedLive"><i></i><span>CONNECTING</span></span> NEW ON PUMP.FUN, LIVE</span>
+      <h1>Every coin becomes a <span class="v">VTuber</span>.</h1>
+      <p class="lede">Upload a character, give it a personality and launch its coin on pump.fun. It goes live the same minute: its own stream room where it talks and reacts to every trade.</p>
+      <a class="btn pink big" href="/launch">Launch a VTuber</a>
+    </div>
+    <aside class="chat hero-chat" aria-label="New coins on pump.fun"><h4>CHAT · NEW LAUNCHES <span id="feedN"></span></h4><div class="msgs" id="feedMsgs"></div></aside>
+  </section>
+  <div class="marquee" aria-hidden="true"><div class="track" id="marq"></div></div>
+
+  <section class="band pinkb" id="how"><div class="wrap">
+    <span class="kick rv">01 — HOW IT WORKS</span>
+    <h2 class="rv">Four steps. The <span class="c">last one</span> streams itself.</h2>
+    <div class="strip">
+      <div class="st rv"><img class="stk" src="/assets/cast/bunbun.png" alt=""><b class="num c">1</b><h3>Bring your character</h3><p>A PNG with a transparent background works best. It becomes the coin image and the avatar on stream.</p></div>
+      <div class="st rv"><img class="stk" src="/assets/cast/drako.png" alt=""><b class="num l">2</b><h3>Write its personality</h3><p>Name, ticker, a short bio, up to two traits and a catchphrase. That is how it talks on stream.</p></div>
+      <div class="st rv"><img class="stk" src="/assets/cast/hoshi.png" alt=""><b class="num w">3</b><h3>Deploy on pump.fun</h3><p>One signature from your wallet. You are the creator, so pump.fun's creator fees go to you.</p></div>
+      <div class="st rv"><img class="stk" src="/assets/mark-512.png" alt=""><b class="num p">4</b><h3>It goes live</h3><p>Its stream room opens at once and reacts to every buy and sell as it happens, in its own voice.</p></div>
+    </div>
+  </div></section>
+
+  <section class="band" id="persona"><div class="wrap">
+    <span class="kick rv">02 — PERSONALITY</span>
+    <h2 class="rv">Pick a <span class="c">vibe</span>. It talks like that.</h2>
+    <div class="pers">
+      <div class="win rv"><div class="stage" id="persStage"></div></div>
+      <div class="pers-side rv">
+        <div class="chips big" id="persChips" role="group" aria-label="Traits"></div>
+        <p class="pers-note">Traits, bio and catchphrase steer every line your VTuber says on stream. An AI model writes them live from what happens on your coin.</p>
+        <button class="btn cyan" id="persHear" type="button" aria-pressed="false">Hear it</button>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="band cyanb" id="live"><div class="wrap">
+    <span class="kick rv">03 — LIVE NOW</span>
+    <h2 class="rv">Who's <span class="p">streaming</span>.</h2>
+    <div class="roster" id="roster"></div>
+    <p class="note" id="rosterNote" hidden></p>
+  </div></section>
+
+  <section class="band" id="obs"><div class="wrap">
+    <span class="kick rv">04 — STREAM IT ANYWHERE</span>
+    <h2 class="rv">Drop it into <span class="l">OBS</span>.</h2>
+    <div class="obs">
+      <ol>
+        <li class="rv">Open your VTuber's room and copy its overlay link.</li>
+        <li class="rv">In OBS, add a Browser Source with that link at 1920×1080. The background is transparent.</li>
+        <li class="rv">Go live on pump.fun, Twitch or Kick. It talks and reacts to your coin's trades on its own.</li>
+      </ol>
+      <div class="obs-canvas rv"><div class="stage overlay" id="obsStage"></div></div>
+    </div>
+  </div></section>
+
+  <section class="band lemonb" id="faq"><div class="wrap">
+    <span class="kick rv">05 — FAQ</span>
+    <h2 class="rv">Questions<span class="p">?</span></h2>
+    <div class="faq">
+      <details class="rv"><summary>What happens when I launch?</summary><p>Your image and metadata are uploaded to pump.fun's IPFS, PumpPortal builds the create transaction, your browser makes the new mint key and your wallet signs. The result is a normal pump.fun coin on its bonding curve, and its stream room on VTUBER opens straight away.</p></details>
+      <details class="rv"><summary>What does it cost?</summary><p>pump.fun's launch costs (about 0.02 SOL), plus any dev buy you choose and PumpPortal's 0.5% fee on that buy. VTUBER adds no fee.</p></details>
+      <details class="rv"><summary>Who gets the creator fees?</summary><p>You. The coin launches from your wallet, so pump.fun's creator fees go to you. VTUBER never holds your keys or your coins.</p></details>
+      <details class="rv"><summary>How does my VTuber talk?</summary><p>An AI model writes each line from the name, bio, traits and catchphrase you gave it, reacting to real trades on your coin. When the model is busy, it uses short house lines instead. Sound is off until a viewer turns it on.</p></details>
+      <details class="rv"><summary>Where do the live trades come from?</summary><p>PumpPortal's public pump.fun data feed, straight into your browser. If the feed is down, the room says so instead of making trades up.</p></details>
+      <details class="rv"><summary>Can I stream it on pump.fun or Twitch?</summary><p>Yes. Every room has an overlay link with a transparent background. Add it to OBS as a Browser Source and go live wherever you stream.</p></details>
+      <details class="rv"><summary>Can I change it after launch?</summary><p>The coin's name, ticker and image are fixed on-chain at launch. The personality lives in the coin's description and a memo on its launch transaction, so design it before you sign.</p></details>
+      <details class="rv"><summary>Which wallets work?</summary><p>Phantom, Solflare and Backpack. You sign one transaction.</p></details>
+      <details class="rv"><summary>Is VTUBER part of pump.fun?</summary><p>No. VTUBER is an independent site that launches coins through pump.fun. Only upload characters you own or made. Memecoins can go to zero, and nothing here is financial advice.</p></details>
+    </div>
+  </div></section>
+</main>
+<script type="module" src="/js/home.js"></script>
+</body>
+</html>

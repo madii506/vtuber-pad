@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "rewrites": [{ "source": "/v/:mint", "destination": "/v.html" }],
+  "functions": { "api/*.js": { "maxDuration": 30 } },
+  "headers": [
+    { "source": "/vendor/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] },
+    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] },
+    { "source": "/(.*)", "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }, { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }] }
+  ]
+}
